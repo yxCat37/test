@@ -17,7 +17,8 @@ jobs:
     if: github.event.pull_request.merged == true
     steps:
       - name: check on first merged pull requests
-        uses: sukki37/new-pull-request-comment-action@v0.1.0
+        uses: sukki37/new-pull-request-comment-action@v0.1.1
+
         id: first-check
         with:
           message: 'hello world!'
