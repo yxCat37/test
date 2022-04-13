@@ -14,6 +14,10 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
+      - name : GITHUB CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: View the information of the pusher
         run: |
           echo "The name of the pusher: ${{ github.event.pusher.name }}"
