@@ -16,6 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+      - name: Contribute List
+        uses: akhilmhdh/contributors-readme-action@v2.3.4
+        with:
+          mage_size: 30
+        env:
+          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
       - name: check on first merged pull requests
         uses: sukki37/new-pull-request-comment-action@v0.1.1
 
