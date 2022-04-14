@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: First Contribution Check
         id: first-check
-        uses: sukki37/first-contribution-check-action@v1.0
+        uses: sukki37/first-contribution-check-action@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Print Output of Previous Step
