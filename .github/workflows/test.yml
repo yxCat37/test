@@ -15,6 +15,10 @@ jobs:
         uses: sukki37/first-contribution-check-action@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print Output of Previous Step
+      - name: Print Output of Previous Step With Condition
+        if: ${{ steps.first-check.outputs.isNewContributor }} == true
         run: |
           echo 'first-check output is ${{ steps.first-check.outputs.isNewContributor }}'
+      - name: Print Output of Previous Step Without Condition
+        run: |
+          echo '2 first-check output is ${{ steps.first-check.outputs.isNewContributor }}'
